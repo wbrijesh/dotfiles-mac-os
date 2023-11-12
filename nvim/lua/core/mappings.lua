@@ -12,3 +12,9 @@ vim.keymap.set("n", "<leader>tcl",
   { desc = "Toggle cmdheight" }
 )
 
+-- use 'space w q' or 'space q' to quit editor
+vim.keymap.set("n", "<leader>wq", ':wqa!<CR>')
+vim.keymap.set("n", "<leader>q", ':qa!<CR>')
+
+-- todo: when pasting do not copy replaced code
+
