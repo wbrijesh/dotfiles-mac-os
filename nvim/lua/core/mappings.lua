@@ -18,3 +18,19 @@ vim.keymap.set("n", "<leader>q", ':qa!<CR>')
 
 -- todo: when pasting do not copy replaced code
 
+
+vim.keymap.set("n", "<leader>cp",
+	function()
+		if vim.g.copilot_enabled == 1 then
+			vim.g.copilot_enabled = 0
+			print("Copilot disabled")
+		else
+			vim.g.copilot_enabled = 1
+			print("Copilot enabled")
+		end
+	end,
+	{ desc = "Toggle Copilot" }
+)
+
+-- use 'space z' to replace word under cursor with last yanked word
+vim.keymap.set("n", "<leader>z", ":%s/<C-R><C-W>/<C-R>0/g<CR>")
